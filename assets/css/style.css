@@ -1,0 +1,32 @@
+.container{
+	width: 100%;
+	max-width: 960px;
+	background-color: #FFC3A0;
+}
+
+#totalScore,#sumOfCrystals{
+	padding: 40px;
+	background: turquoise;
+	width: 100px;
+}
+#totalScore{
+	width: 100px;
+}
+#crystal1,#crystal2,#crystal3,#crystal4{
+border: 1px solid blue;	
+}
+
+#randomNumber,#scoreKeeper{
+	background: turquoise;
+	margin: 5px;
+	margin-left: 0;
+	padding: 40px;
+}
+
+#randomNumber{
+	padding: 60px;
+}
+
+#rules {
+	background-color: #8BD6D6;
+}

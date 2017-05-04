@@ -1,0 +1,19 @@
+CrystalsCollector!
+
+1. GAME STARTS WITH: 
+	a. Randomly generated number between 19-120
+	b. Random value assigned to each crystal between 1-12
+	c. wins and losses set to 0. 
+
+2. USER WINS: 
+	a. wins +1 if randomly generated # = sum of crystals variables
+	
+3. USER LOSES:
+	a. losses+1 if sum of crystals is > randomly generated number. 
+
+4. Assign each number in crystalNumbers array to a crystal
+ image.
+
+ 5.
+
+	 
