@@ -3,68 +3,72 @@ $(document).ready(function() {
 // global variables
 //::::::::::::
 
-var wins;
-var losses;
+//GRAB ELEMENT WITH ID #WINSCOUNTER
+var wins = document.querySelector('#winsCounter');
+
+//GRAB ELEMENT WITH ID #LOSSESCOUNTER
+var losses = document.querySelector('#lossesCounter');
+
+//GRAB ELEMENT WITH ID #RANDOMNUMBER
 //randomly generated number for the computer
-var selectedNumber;
+var selectedNumber = document.querySelector('#randomNumber');
+
+//GRAB ELEMENT WITH ID #SUMOFCRYSTALS
+
+var sumOfCrystals = document.querySelector('#sumOfCrystals');
 //randomly generated number for each of the 4 crystals
 var crystalNumvar;
-var sumOfCrystals= 0;
-
-var winsCounter = 0;
+/*var sumOfCrystals= 0;
+*/
+var winsCounter= 0;
 var lossesCounter = 0;
 //array for randomly generated 4 crystal numbers
 var crystalNumbers = [];
 //array for randomly generated computer number
-var randomNumber = [];
+var randomNumber = 0;
 
 //:::::::::::::::
-//:: functions ::
+//:: functions 
 //:::::::::::::::
 function startGame() {
-	winsCounter = 0;
-	lossesCounter = 0;
+	wins.innerHTML = winsCounter;
+	losses.innerHTML = lossesCounter;
 	sumOfCrystals = 0;
-	//debugs startGame()
-	
 }
 
 //generates random number between 19 and 120 
 function getRandomNumber(min, max){
 	selectedNumber = Math.floor(Math.random()*102)+19;
-	randomNumber.push(selectedNumber);
+
 
 //debugs getRandomNumber function	
 	console.log(selectedNumber);
 }
 
-/*function generateCrystalNumber(){
-	for (var i = 0; i<4; i++){
-	crystalNumvar = Math.floor(Math.random()*12) + 1;
-	crystalNumbers.push(crystalNumvar);
-	console.log(crystalNumvar);
-	}
-}*/
 
 //generates 4 random numbers and pushes them into an array 
 
-    function generateCrystalNumber() {
+function generateCrystalNumber() {
         for (var i = 0; i < 4; i++) {
             crystalNumvar = Math.floor(Math.random() * 12) + 1;
             crystalNumbers.push(crystalNumvar);
         }
     }
 
+//function that calculates value of sumOfCrystals
+/*
+function crystalSum(){
+
+}*/
 
 //resets game after win or loss
 function gameReset (){
 	sumOfCrystals = 0;
-
 }
 
-//::::::::::::
+//::::::::::::::::::::::::::::::::::::::::::::::::
 // main code
-//::::::::::::
+//::::::::::::::::::::::::::::::::::::::::::::::::
 //function calls
 startGame();
 getRandomNumber();
@@ -79,29 +83,31 @@ $('#randomNumber').text(selectedNumber);
     $(document).ready(function () {
         $('img').each(function (index) {
            var crystal= $(this).attr('data-crystal', crystalNumbers[index]);
-
         })
         
         $('img').on('click', function(){
-            console.log($(this).attr('data-crystal'));
 
+            console.log($(this).attr('data-crystal'));
         });
+        
     })
 
+$('#sumOfCrystals').text(sumOfCrystals);
 
 //if sumOfCrystals === selectedNumber { wins++; call startGame();
 if (sumOfCrystals === selectedNumber) {
 	wins++;
-	startgame();
+	gameReset();
 	getRandomNumber();
 	generateCrystalNumber();
 }
 
 //else losses++call startGame(); call generateCrystalNumber;
 // call getRandomNumber}
+
 else if (sumOfCrystals > selectedNumber) {
 	losses++;
-	startgame();
+	gameReset();
 	getRandomNumber();
 	generateCrystalNumber();
 }

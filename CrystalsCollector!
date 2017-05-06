@@ -14,6 +14,12 @@ CrystalsCollector!
 4. Assign each number in crystalNumbers array to a crystal
  image.
 
- 5.
+ 5.everytime an img is clicked, calculate sum of assigned values. 
 
-	 
+	 /*function generateCrystalNumber(){
+	for (var i = 0; i<4; i++){
+	crystalNumvar = Math.floor(Math.random()*12) + 1;
+	crystalNumbers.push(crystalNumvar);
+	console.log(crystalNumvar);
+	}
+}*/
