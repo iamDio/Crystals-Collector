@@ -63,6 +63,8 @@ function crystalSum(){
 
 //resets game after win or loss
 function gameReset (){
+		getRandomNumber();
+	generateCrystalNumber();
 	sumOfCrystals = 0;
 }
 
@@ -86,31 +88,31 @@ $('#randomNumber').text(selectedNumber);
         })
         
         $('img').on('click', function(){
-
             console.log($(this).attr('data-crystal'));
-        });
-        
-    })
-
-$('#sumOfCrystals').text(sumOfCrystals);
-
-//if sumOfCrystals === selectedNumber { wins++; call startGame();
+            var valueOfCrystal = $(this).attr('data-crystal');
+           	sumOfCrystals = sumOfCrystals + parseInt(valueOfCrystal);
+           	console.log(sumOfCrystals);
+         $('#sumOfCrystals').text(sumOfCrystals); 	
+         //if sumOfCrystals === selectedNumber { wins++; call startGame();
 if (sumOfCrystals === selectedNumber) {
 	wins++;
 	gameReset();
-	getRandomNumber();
-	generateCrystalNumber();
+
 }
 
 //else losses++call startGame(); call generateCrystalNumber;
 // call getRandomNumber}
 
-else if (sumOfCrystals > selectedNumber) {
+if (sumOfCrystals > selectedNumber) {
 	losses++;
 	gameReset();
-	getRandomNumber();
-	generateCrystalNumber();
 }
+        });
+        
+    })
+
+
+
 
 
 });
