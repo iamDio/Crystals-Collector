@@ -16,14 +16,14 @@
 border: 1px solid blue;	
 }
 
-#randomNumber,#scoreKeeper{
+#randomNumberDisplay,#scoreKeeper{
 	background: turquoise;
 	margin: 5px;
 	margin-left: 0;
 	padding: 40px;
 }
 
-#randomNumber{
+#randomNumberDisplay{
 	padding: 60px;
 }
 
