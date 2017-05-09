@@ -20,10 +20,11 @@ var randomNumber = randomNumberGenerator(19,120);
 var winsCounter = 0;
 var lossesCounter = 0;
 var userScore = 0;
+var audio = new Audio("assets/music/crystalcollector.mp3");
 
 //-----------------------------------------------
 //FUNCTIONS 
-
+audio.play();
 //generates random number
 function randomNumberGenerator(min, max){
    return Math.floor(Math.random()* max + min) 
